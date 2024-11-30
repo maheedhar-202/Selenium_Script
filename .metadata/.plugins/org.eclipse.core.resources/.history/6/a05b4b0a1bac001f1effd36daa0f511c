@@ -1,0 +1,39 @@
+package Selenium_Scripts;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Timeouts;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Ecommerce {
+	public WebDriver driver;
+	
+	@BeforeClass
+	public void setUp() {
+		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.flipkart.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	@Test(priority = 1)
+	public void search_text() throws InterruptedException {
+		driver.findElement(By.xpath("//*[@type='text']")).sendKeys("LapTops"+Keys.ENTER);
+		driver.findElement(By.xpath("//*[text()='Brand']")).click();
+		driver.findElement(By.xpath("//*[text()='HP']")).click();
+		Thread.sleep(10);
+		List<WebElement> products = driver.findElements(By.xpath("//*[@class='DOjaWF gdgoEp']/div"));
+		for(int i=2;i<=5;i++) {
+			String ProductNames = driver.findElement(By.xpath("//*[@class='DOjaWF gdgoEp']/div["+i+"]/div/div/div/a/div[2]/div[1]/div")).getText();
+			System.out.println("Product Names:"+ProductNames);
+			driver.findElement(By.xpath("(//*[@class='DOjaWF gdgoEp']/div["+i+"]/div/div/div/a/div[2]/div[2]/div/div[1]/div)[1]")).getText();
+		}
+	}
+
+}
