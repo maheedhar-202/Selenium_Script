@@ -1964,3 +1964,4 @@
 2024-11-27 06:48:42,941 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\GitWorkspace\Selenium\src\main\resources
 2024-11-27 06:48:42,943 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-11-27 06:48:42,943 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\GitWorkspace\Selenium\src\test\resources
+2024-11-30 08:26:30,717 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
